@@ -21,12 +21,13 @@ namespace Prework_CodeChallenges
 
             for (int i = 0; i < 5; i++)
             {
+
                 userNumbers[i] = int.Parse(Console.ReadLine());
             }
 
             Console.WriteLine($"Thank you for your input. Here is the array of numbers you've selected: [{string.Join(", ", userNumbers)}]");
 
-            Console.WriteLine("Now, please tell me your favorite number out of the ones provided: ");
+            Console.WriteLine("Now, what is your favorite number out of the ones provided: ");
             int userFavoriteNumber = int.Parse(Console.ReadLine());
 
             int userNumberScore = getArrayMaxResult(userNumbers, userFavoriteNumber);
@@ -34,19 +35,16 @@ namespace Prework_CodeChallenges
             Console.WriteLine($"Your number score is: {userNumberScore}");
         }
 
-
-        static int getArrayMaxResult(int[] numArray, int selection)
+        static int getArrayMaxResult(int[] numArray, int usrNum)
         {
            int timesInArray = 0;
 
-            int userNum = selection;
-
            foreach(var num in numArray)
            {
-                if (num == userNum) timesInArray++;
+                if (num == usrNum) timesInArray++;
            }
 
-           return userNum * timesInArray;
+           return usrNum * timesInArray;
         }
     }
 }
