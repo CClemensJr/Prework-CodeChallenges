@@ -6,23 +6,48 @@ namespace Prework_CodeChallenges
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[] { 6, 4, 4, 1, 3 };
-            int chosen = 4;
-            getArrayMaxResult(arr, chosen);
+            getNumberScore();
+
             Console.ReadLine();
         }
 
         
-        static void getArrayMaxResult(int[] numArray, int selection)
+        static void getNumberScore()
         {
-            int timesInArray = 0;
+            Console.WriteLine("Hello and welcome to your first challenge!");
+            Console.WriteLine("Please provide me five numbers between 1 and 10:");
+            int[] arr = new int[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                string num = Console.ReadLine();
+
+                arr[i] = int.Parse(num);
+            }
+
+            Console.WriteLine($"Thank you for your input. Here is the array of numbers you've selected: [{string.Join(", ", arr)}]");
+
+            Console.WriteLine("Now, please tell me your favorite number out of the ones provided: ");
+            string favNum = Console.ReadLine();
+
+            int numberScore = getArrayMaxResult(arr, favNum);
+
+            Console.WriteLine($"Your number score is: {numberScore}");
+        }
+
+
+        static int getArrayMaxResult(int[] numArray, string selection)
+        {
+           int timesInArray = 0;
+
+           int userNum = int.Parse(selection);
 
            foreach(var num in numArray)
            {
-                if (num == selection) timesInArray++;
+                if (num == userNum) timesInArray++;
            }
 
-           Console.WriteLine(selection * timesInArray);
+           return(userNum * timesInArray);
         }
     }
 }
