@@ -86,5 +86,12 @@ namespace Prework_CodeChallenges
                 Console.WriteLine($"{userYear} is not a leap year.");
             }
          }
+
+        static bool leapYearCalculator(int year)
+        {
+            if ((year % 400 == 0 && year % 100 == 0) || (year % 4 == 0 && year % 100 != 0)) return true;
+
+            return false;
+        }
     }
 }
