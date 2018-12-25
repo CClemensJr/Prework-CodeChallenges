@@ -71,6 +71,20 @@ namespace Prework_CodeChallenges
          static void checkLeapYear()
          {
             Console.WriteLine("Welcome to the second challenge!");
+            Console.WriteLine("Please give me a year. I will let you know if it was a leap year!");
+
+            int userYear = int.Parse(Console.ReadLine());
+
+            bool isLeapYear = leapYearCalculator(userYear);
+
+            if (isLeapYear)
+            {
+                Console.WriteLine($"{userYear} is a leap year!");
+            }
+            else
+            {
+                Console.WriteLine($"{userYear} is not a leap year.");
+            }
          }
     }
 }
