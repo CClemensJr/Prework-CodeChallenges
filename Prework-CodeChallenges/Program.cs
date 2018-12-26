@@ -128,7 +128,7 @@ namespace Prework_CodeChallenges
 
             Console.WriteLine($"Here is the sequence you gave me: [{string.Join(", ", userSequence)}]");
 
-            bool isPerfectSequence = analyzeSequence(List<int> userSequence);
+            bool isPerfectSequence = analyzeSequence(userSequence);
 
             if (isPerfectSequence)
             {
@@ -139,6 +139,31 @@ namespace Prework_CodeChallenges
                 Console.WriteLine("Unfortunately your sequence was not a perfect one");
             }
 
+        }
+
+        static bool analyzeSequence(List<int> sequence)
+        {
+            int sequenceSum = sequence[0];
+            int sequenceProduct = sequence[0];
+
+            foreach (int num in sequence)
+            {
+                Console.WriteLine($"Sequence Sum Before: {sequenceSum}");
+                Console.WriteLine($"Sequence Product Before: {sequenceProduct}");
+
+                if (num < 0) return false;
+
+                sequenceSum += num;
+                sequenceProduct *= num;
+
+                Console.WriteLine($"Sequence Sum After: {sequenceSum}");
+                Console.WriteLine($"Sequence Product After: {sequenceProduct}");
+            }
+
+            if (sequenceSum == sequenceProduct)
+                return true;
+            else
+                return false;
         }
     }
 }
