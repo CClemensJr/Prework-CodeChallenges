@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Prework_CodeChallenges
 {
@@ -10,16 +11,24 @@ namespace Prework_CodeChallenges
             Console.WriteLine("Which challenge would you like to attempt first? Please enter the number of the preferred challenge:");
             Console.WriteLine("1. Array Max Result");
             Console.WriteLine("2. Leap Year Calculator");
+            Console.WriteLine("3. Perfect Sequence");
 
             int challengeNumber = int.Parse(Console.ReadLine());
 
-            if (challengeNumber == 1)
+            switch (challengeNumber)
             {
-                checkNumberScore();
-            }
-            else
-            {
-                checkLeapYear();
+                case 1:
+                    checkNumberScore();
+                    break;
+                case 2:
+                    checkLeapYear();
+                    break;
+                case 3:
+                    checkPerfectSequence();
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid number.");
+                    break;
             }
 
             Console.ReadLine();
@@ -92,6 +101,63 @@ namespace Prework_CodeChallenges
             if ((year % 400 == 0 && year % 100 == 0) || (year % 4 == 0 && year % 100 != 0)) return true;
 
             return false;
+        }
+
+
+
+        /**********************
+         * ********** Problem 3
+         * ********************/
+        static void checkPerfectSequence()
+        {
+            Console.WriteLine("Welcome to the third challenge!");
+            Console.WriteLine("If you will give me a sequence of integers, I will tell you if they make up a perfect sequence! Enter 'DONE' when you have finished.");
+
+            int i = 0;
+            string userInput;
+            var userSequence = new List<int> {};
+
+            do
+            {
+                userInput = Console.ReadLine();
+
+                if (userInput != "DONE") userSequence.Add(int.Parse(userInput));
+
+                i++;
+            } while (userInput != "DONE");
+
+            Console.WriteLine($"Here is the sequence you gave me: [{string.Join(", ", userSequence)}]");
+
+            bool isPerfectSequence = analyzeSequence(userSequence);
+
+            if (isPerfectSequence)
+            {
+                Console.WriteLine("Your sequence is a perfect sequence!");
+            }
+            else
+            {
+                Console.WriteLine("Unfortunately your sequence was not a perfect one");
+            }
+
+        }
+
+        static bool analyzeSequence(List<int> sequence)
+        {
+            int sequenceSum = 0;
+            int sequenceProduct = 1;
+
+            foreach (int num in sequence)
+            {
+                if (num < 0) return false;
+
+                sequenceSum += num;
+                sequenceProduct *= num;
+            }
+
+            if (sequenceSum == sequenceProduct)
+                return true;
+            else
+                return false;
         }
     }
 }
