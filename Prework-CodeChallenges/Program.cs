@@ -12,6 +12,7 @@ namespace Prework_CodeChallenges
             Console.WriteLine("1. Array Max Result");
             Console.WriteLine("2. Leap Year Calculator");
             Console.WriteLine("3. Perfect Sequence");
+            Console.WriteLine("4. Sum of Rows");
 
             int challengeNumber = int.Parse(Console.ReadLine());
 
@@ -25,6 +26,9 @@ namespace Prework_CodeChallenges
                     break;
                 case 3:
                     checkPerfectSequence();
+                    break;
+                case 4:
+                    checkSumOfRows();
                     break;
                 default:
                     Console.WriteLine("Please enter a valid number.");
@@ -158,6 +162,16 @@ namespace Prework_CodeChallenges
                 return true;
             else
                 return false;
+        }
+
+
+
+        /**********************
+         * ********** Problem 4
+         * ********************/
+        static void checkSumOfRows()
+        {
+            Console.WriteLine("GET YOUR ROW SUMS HERE!");
         }
     }
 }
