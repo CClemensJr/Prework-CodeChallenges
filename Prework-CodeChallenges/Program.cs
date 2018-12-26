@@ -171,7 +171,34 @@ namespace Prework_CodeChallenges
          * ********************/
         static void checkSumOfRows()
         {
-            Console.WriteLine("GET YOUR ROW SUMS HERE!");
+            Console.WriteLine("Welcome to challenge number four!");
+            Console.WriteLine("So this challenge is going to require a bit more participation on your part.");
+            Console.WriteLine("I am going to provide you with the sum for each row in a multi-demensional array but it is up to you to determine how many rows and columns there are.");
+            Console.Write("Rows: ");
+
+            int rows = int.Parse(Console.ReadLine());
+
+            Console.Write("Columns: ");
+
+            int columns = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"ROWS = {rows} AND COLUMNS = {columns}");
+            Console.WriteLine("Now did you want to [p]rovide the numbers for each rows yourself or let me [r]andomly assign numbers for you?");
+
+            string mode = Console.ReadLine();
+
+            if (mode == "p")
+            {
+                chooseNumbers(rows, columns);
+            }
+            else if (mode == "r")
+            {
+                randomlyAssignNumbers(rows, columns);
+            }
+            else
+            {
+                Console.WriteLine("Please enter p to provide the numbers yourself or r to have them randomly assigned");
+            }
         }
     }
 }
