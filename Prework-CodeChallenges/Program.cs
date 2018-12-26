@@ -143,21 +143,15 @@ namespace Prework_CodeChallenges
 
         static bool analyzeSequence(List<int> sequence)
         {
-            int sequenceSum = sequence[0];
-            int sequenceProduct = sequence[0];
+            int sequenceSum = 0;
+            int sequenceProduct = 1;
 
             foreach (int num in sequence)
             {
-                Console.WriteLine($"Sequence Sum Before: {sequenceSum}");
-                Console.WriteLine($"Sequence Product Before: {sequenceProduct}");
-
                 if (num < 0) return false;
 
                 sequenceSum += num;
                 sequenceProduct *= num;
-
-                Console.WriteLine($"Sequence Sum After: {sequenceSum}");
-                Console.WriteLine($"Sequence Product After: {sequenceProduct}");
             }
 
             if (sequenceSum == sequenceProduct)
