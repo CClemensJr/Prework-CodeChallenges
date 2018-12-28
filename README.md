@@ -109,13 +109,26 @@ int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12
 ![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/array_max_result_random_input.PNG?raw=true "Random Input")
 
 ### Problem 2:
-![alt text](https://via.placeholder.com/450 "The solution image will go here.")
+#### Sample Valid Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/leap_year_calculator_sample_valid_input.PNG?raw=true "Sample Valid Input")
+#### Sample Invalid Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/leap_year_calculator_sample_invalid_input.PNG?raw=true "Sample Invalid Input")
+#### Custom Valid Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/leap_year_calculator_custom_valid_input.PNG?raw=true "Custom Valid Input")
+#### Custom Invalid Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/leap_year_calculator_custom_invalid_input.PNG?raw=true "Custom Invalid Input")
 
 ### Problem 3:
-![alt text](https://via.placeholder.com/450 "The solution image will go here.")
+#### Sample Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/perfect_sequence_sample_valid_input.PNG?raw=true "Sample Input")
+#### Custom Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/perfect_sequence_custom_invalid_input.PNG?raw=true "Custom Input")
 
 ### Problem 4:
-![alt text](https://via.placeholder.com/450 "The solution image will go here.")
+#### Sample Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/sum_of_rows_sample_input.PNG?raw=true "Sample Input.")
+#### Random Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/sum_of_rows_random_input.PNG?raw=true "Random Input.")
 
 
 
