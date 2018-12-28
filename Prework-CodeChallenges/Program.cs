@@ -200,5 +200,41 @@ namespace Prework_CodeChallenges
                 Console.WriteLine("Please enter p to provide the numbers yourself or r to have them randomly assigned");
             }
         }
+
+        static void chooseNumbers(int rows, int columns)
+        {
+            int[,] grid = new int[rows, columns];
+            Console.WriteLine($"Please provide {columns} numbers for each row:");
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write($"Row {i + 1}, number {j + 1}: ");
+                    grid[i,j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            Console.WriteLine("Thank you. Now here is what your array looks like: ");
+
+            Console.WriteLine($"[{string.Join(", ", grid)}]");
+            for (int i = 0; i < rows; i++)
+            {
+                Console.Write("[ ");
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write($"{string.Join(", ", grid[i, j])} ");
+                }
+
+                Console.WriteLine("]");
+            }
+            
+
+        }
+
+        static void randomlyAssignNumbers(int rows, int columns)
+        {
+            Console.WriteLine($"ROWS: {rows} || COLUMNS: {columns}");
+        }
     }
 }
