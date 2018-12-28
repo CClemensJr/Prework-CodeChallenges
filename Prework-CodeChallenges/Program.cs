@@ -217,7 +217,36 @@ namespace Prework_CodeChallenges
 
             Console.WriteLine("Thank you. Now here is what your array looks like: ");
 
-            Console.WriteLine($"[{string.Join(", ", grid)}]");
+            for (int i = 0; i < rows; i++)
+            {
+                Console.Write("[ ");
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write($"{string.Join(", ", grid[i, j])} ");
+                }
+
+                Console.WriteLine("}");
+            }
+
+            int[] rowSums = addRows(grid);
+
+            Console.WriteLine($"And here are the sums for each row {rowSums}");
+
+        }
+
+        static void randomlyAssignNumbers(int rows, int columns)
+        {
+            Random randomNumber = new Random();
+            int[,] grid = new int[rows, columns];
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    grid[i, j] = randomNumber.Next(-1000, 1000);
+                }
+            }
+
             for (int i = 0; i < rows; i++)
             {
                 Console.Write("[ ");
@@ -228,13 +257,16 @@ namespace Prework_CodeChallenges
 
                 Console.WriteLine("]");
             }
-            
 
         }
 
-        static void randomlyAssignNumbers(int rows, int columns)
+        static int[] addRows(int[,] grid)
         {
-            Console.WriteLine($"ROWS: {rows} || COLUMNS: {columns}");
+            Console.WriteLine(string.Join(", ", grid));
+
+            int[] sums = new int[] { 1, 2, 3 };
+
+            return sums;
         }
     }
 }
