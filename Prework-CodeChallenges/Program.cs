@@ -230,7 +230,7 @@ namespace Prework_CodeChallenges
 
             int[] rowSums = addRows(grid);
 
-            Console.WriteLine($"And here are the sums for each row {rowSums}");
+            Console.WriteLine($"And here are the sums for each row [{string.Join(", ", rowSums)}]");
 
         }
 
@@ -262,9 +262,25 @@ namespace Prework_CodeChallenges
 
         static int[] addRows(int[,] grid)
         {
-            Console.WriteLine(string.Join(", ", grid));
+            int[] sums = new int[grid.GetLength(0)];
 
-            int[] sums = new int[] { 1, 2, 3 };
+            for (int i = 0; i < grid.GetLength(0); i++)
+            {
+                int rowSum = 0;
+
+                for (int j = 0; j < grid.GetLength(1); j++)
+                {
+                    rowSum += grid[i, j];
+
+                    Console.WriteLine($"ROWSUM: {rowSum}");
+                }
+
+                sums[i] = rowSum;
+
+                Console.WriteLine($"SUMS[{i}] = {sums[i]}");
+            }
+
+            Console.WriteLine($"ALL SUMS: [{string.Join(", ", sums)}]");
 
             return sums;
         }
