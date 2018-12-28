@@ -103,7 +103,10 @@ int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12
 
 ## Solution Verification
 ### Problem 1:
-![alt text](https://via.placeholder.com/450 "The solution image will go here.")
+#### Sample Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/array_max_result_sample_input.PNG?raw=true "Sample Input")
+#### Random Input:
+![alt text](https://github.com/CClemensJr/Prework-CodeChallenges/blob/master/solution-images/array_max_result_random_input.PNG?raw=true "Random Input")
 
 ### Problem 2:
 ![alt text](https://via.placeholder.com/450 "The solution image will go here.")
