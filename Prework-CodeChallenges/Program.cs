@@ -8,11 +8,12 @@ namespace Prework_CodeChallenges
         static void Main(string[] args)
         {
             Console.WriteLine("Hello and welcome to the Code 401 .Net Prework Code Challenges.");
-            Console.WriteLine("Which challenge would you like to attempt first? Please enter the number of the preferred challenge:");
-            Console.WriteLine("1. Array Max Result");
-            Console.WriteLine("2. Leap Year Calculator");
-            Console.WriteLine("3. Perfect Sequence");
-            Console.WriteLine("4. Sum of Rows");
+            Console.WriteLine("Which challenge would you like to attempt first?");
+            Console.WriteLine("[1]. Array Max Result");
+            Console.WriteLine("[2]. Leap Year Calculator");
+            Console.WriteLine("[3]. Perfect Sequence");
+            Console.WriteLine("[4]. Sum of Rows");
+            Console.WriteLine();
 
             int challengeNumber = int.Parse(Console.ReadLine());
 
@@ -43,8 +44,10 @@ namespace Prework_CodeChallenges
          * ********************/
         static void checkNumberScore()
         {
-            Console.WriteLine("Welcome to your first challenge!");
+            Console.WriteLine();
+            Console.WriteLine("Welcome to ARRAY MAX RESULT!");
             Console.WriteLine("Please provide me five numbers between 1 and 10:");
+            Console.WriteLine();
 
             int[] userNumbers = new int[5];
 
@@ -54,13 +57,16 @@ namespace Prework_CodeChallenges
                 userNumbers[i] = int.Parse(Console.ReadLine());
             }
 
+            Console.WriteLine();
             Console.WriteLine($"Thank you for your input. Here is the array of numbers you've selected: [{string.Join(", ", userNumbers)}]");
-
-            Console.WriteLine("Now, what is your favorite number out of the ones provided: ");
+            Console.WriteLine();
+            Console.Write("Now, which of these numbers do you favor? ");
+     
             int userFavoriteNumber = int.Parse(Console.ReadLine());
 
             int userNumberScore = getArrayMaxResult(userNumbers, userFavoriteNumber);
 
+            Console.WriteLine();
             Console.WriteLine($"Your number score is: {userNumberScore}");
         }
 
@@ -83,8 +89,9 @@ namespace Prework_CodeChallenges
          * ********************/
          static void checkLeapYear()
          {
-            Console.WriteLine("Welcome to the second challenge!");
-            Console.WriteLine("Please give me a year. I will let you know if it was a leap year!");
+            Console.WriteLine();
+            Console.WriteLine("Welcome to LEAP YEAR CALCULATOR!");
+            Console.Write("Provide a year and I will confirm the year's leap year status:  ");
 
             int userYear = int.Parse(Console.ReadLine());
 
@@ -92,10 +99,12 @@ namespace Prework_CodeChallenges
 
             if (isLeapYear)
             {
+                Console.WriteLine();
                 Console.WriteLine($"{userYear} is a leap year!");
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine($"{userYear} is not a leap year.");
             }
          }
@@ -114,8 +123,10 @@ namespace Prework_CodeChallenges
          * ********************/
         static void checkPerfectSequence()
         {
-            Console.WriteLine("Welcome to the third challenge!");
-            Console.WriteLine("If you will give me a sequence of integers, I will tell you if they make up a perfect sequence! Enter 'DONE' when you have finished.");
+            Console.WriteLine();
+            Console.WriteLine("Welcome to PERFECT SEQUENCE!");
+            Console.WriteLine("Provide some numbers and I will tell you if they make up a perfect sequence! Enter 'DONE' when finished.");
+            Console.WriteLine();
 
             int i = 0;
             string userInput;
@@ -136,11 +147,13 @@ namespace Prework_CodeChallenges
 
             if (isPerfectSequence)
             {
-                Console.WriteLine("Your sequence is a perfect sequence!");
+                Console.WriteLine();
+                Console.WriteLine("Congratulations! You have a perfect sequence on your hands.");
             }
             else
             {
-                Console.WriteLine("Unfortunately your sequence was not a perfect one");
+                Console.WriteLine();
+                Console.WriteLine("I must extend the most humble of apologies. What you presented, though beautiful and a sequence, was not a perfect sequence.");
             }
 
         }
@@ -171,20 +184,25 @@ namespace Prework_CodeChallenges
          * ********************/
         static void checkSumOfRows()
         {
+            Console.WriteLine();
             Console.WriteLine("Welcome to challenge number four!");
             Console.WriteLine("So this challenge is going to require a bit more participation on your part.");
             Console.WriteLine("I am going to provide you with the sum for each row in a multi-demensional array but it is up to you to determine how many rows and columns there are.");
+            Console.WriteLine();
             Console.Write("Rows: ");
 
             int rows = int.Parse(Console.ReadLine());
 
+            Console.WriteLine();
             Console.Write("Columns: ");
 
             int columns = int.Parse(Console.ReadLine());
 
+            Console.WriteLine();
             Console.WriteLine($"ROWS = {rows} AND COLUMNS = {columns}");
             Console.WriteLine("Now did you want to [p]rovide the numbers for each rows yourself or let me [r]andomly assign numbers for you?");
 
+            Console.WriteLine();
             string mode = Console.ReadLine();
 
             if (mode == "p")
@@ -230,7 +248,7 @@ namespace Prework_CodeChallenges
 
             int[] rowSums = addRows(grid);
 
-            Console.WriteLine($"And here are the sums for each row [{string.Join(", ", rowSums)}]");
+            Console.WriteLine($"Here are the sums for each row of the custom array: [{string.Join(", ", rowSums)}]");
 
         }
 
@@ -258,6 +276,9 @@ namespace Prework_CodeChallenges
                 Console.WriteLine("]");
             }
 
+            int[] rowSums = addRows(grid);
+
+            Console.WriteLine($"Here are the sums for each row of the random array: [{string.Join(", ", rowSums)}]");
         }
 
         static int[] addRows(int[,] grid)
@@ -271,16 +292,10 @@ namespace Prework_CodeChallenges
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
                     rowSum += grid[i, j];
-
-                    Console.WriteLine($"ROWSUM: {rowSum}");
                 }
 
                 sums[i] = rowSum;
-
-                Console.WriteLine($"SUMS[{i}] = {sums[i]}");
             }
-
-            Console.WriteLine($"ALL SUMS: [{string.Join(", ", sums)}]");
 
             return sums;
         }
