@@ -185,9 +185,9 @@ namespace Prework_CodeChallenges
         static void checkSumOfRows()
         {
             Console.WriteLine();
-            Console.WriteLine("Welcome to challenge number four!");
-            Console.WriteLine("So this challenge is going to require a bit more participation on your part.");
-            Console.WriteLine("I am going to provide you with the sum for each row in a multi-demensional array but it is up to you to determine how many rows and columns there are.");
+            Console.WriteLine("Welcome to SUM OF ROWS!");
+            Console.WriteLine("This challenge will require a bit more user participation.");
+            Console.WriteLine("I will provide the sum for each row in a multi-dimensional array but you must determine how many rows and columns the array shall have.");
             Console.WriteLine();
             Console.Write("Rows: ");
 
@@ -199,10 +199,8 @@ namespace Prework_CodeChallenges
             int columns = int.Parse(Console.ReadLine());
 
             Console.WriteLine();
-            Console.WriteLine($"ROWS = {rows} AND COLUMNS = {columns}");
-            Console.WriteLine("Now did you want to [p]rovide the numbers for each rows yourself or let me [r]andomly assign numbers for you?");
+            Console.Write("Now [p]rovide the numbers for each row yourself or have them [r]andomly assigned for you:  ");
 
-            Console.WriteLine();
             string mode = Console.ReadLine();
 
             if (mode == "p")
@@ -215,14 +213,18 @@ namespace Prework_CodeChallenges
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("Please enter p to provide the numbers yourself or r to have them randomly assigned");
             }
         }
 
         static void chooseNumbers(int rows, int columns)
         {
-            int[,] grid = new int[rows, columns];
+            Console.WriteLine();
             Console.WriteLine($"Please provide {columns} numbers for each row:");
+            Console.WriteLine();
+
+            int[,] grid = new int[rows, columns];
 
             for (int i = 0; i < rows; i++)
             {
@@ -233,21 +235,29 @@ namespace Prework_CodeChallenges
                 }
             }
 
+            Console.WriteLine();
             Console.WriteLine("Thank you. Now here is what your array looks like: ");
+            Console.WriteLine();
 
+            Console.Write("[");
             for (int i = 0; i < rows; i++)
             {
-                Console.Write("[ ");
+                Console.Write(" [");
                 for (int j = 0; j < columns; j++)
                 {
                     Console.Write($"{string.Join(", ", grid[i, j])} ");
                 }
 
-                Console.WriteLine("}");
+                if (i == rows - 1)
+                    Console.Write("]");
+                else
+                    Console.WriteLine("]");
             }
+            Console.Write(" ]");
 
             int[] rowSums = addRows(grid);
 
+            Console.WriteLine();
             Console.WriteLine($"Here are the sums for each row of the custom array: [{string.Join(", ", rowSums)}]");
 
         }
@@ -265,19 +275,29 @@ namespace Prework_CodeChallenges
                 }
             }
 
+            Console.WriteLine();
+            Console.WriteLine("The numbers have been randomly generated for your convenience. Here is what the array looks like: ");
+            Console.WriteLine();
+
+            Console.Write("[ ");
             for (int i = 0; i < rows; i++)
             {
-                Console.Write("[ ");
+                Console.Write("[");
                 for (int j = 0; j < columns; j++)
                 {
                     Console.Write($"{string.Join(", ", grid[i, j])} ");
                 }
 
-                Console.WriteLine("]");
+                if (i == rows - 1)
+                    Console.Write("]");
+                else
+                    Console.WriteLine("]");
             }
+            Console.Write("]");
 
             int[] rowSums = addRows(grid);
 
+            Console.WriteLine();
             Console.WriteLine($"Here are the sums for each row of the random array: [{string.Join(", ", rowSums)}]");
         }
 
